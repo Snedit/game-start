@@ -1,0 +1,71 @@
+/* Container covering the entire viewport */
+.thunder-container {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr); /* Adjust the number of rows as needed */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Each row */
+.row {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Thunder icon styling with waving effect */
+.thunder-icon {
+  font-size: 3rem;
+  color: rgb(255, 255, 253);
+  margin: 0 1rem;
+  user-select: none;
+  pointer-events: none;
+  animation: wave 1s ease-in-out infinite alternate;
+}
+
+/* Animation for three-step infinite scrolling */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Waving animation */
+@keyframes wave {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Apply scrolling animation to odd and even rows */
+.row:nth-child(odd) {
+  animation: scrollLeft 20s ease-in-out infinite;
+  transform: translateX(50%);
+}
+
+.row:nth-child(even) {
+  transform: translateX(-50%);
+  animation: scrollRight 20s ease-in-out infinite;
+}
