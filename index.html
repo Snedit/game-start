@@ -46,7 +46,7 @@
 
       .vid-container {
         display: block;
-        width: 20%;
+        width: 30%;
         height: auto;
         position: fixed;
         top: 50%;
@@ -151,6 +151,20 @@
         box-shadow: 0 0 10px white;
         color: rgb(237, 14, 125);
       }
+      @media (max-width: 480px) {
+        #preloader img {
+          width: 70%; /* Adjust preloader image size for mobile */
+        }
+
+        .vid-container {
+          width: 80%; /* Larger video container on small screens */
+        }
+
+        #openCameraButton {
+          font-size: 0.9em;
+          padding: 6px 12px;
+        }
+      }
     </style>
     <link rel="stylesheet" href="thunderscroll.css" />
   </head>
@@ -160,8 +174,6 @@
       <button id="openCameraButton">Let's Dance!</button>
     </div>
     <div id="content">
-      thunder container:
-
       <div class="thunder-container">
         <!-- Multiple rows of thunder icons -->
         <div class="row">

@@ -61,11 +61,11 @@
 
 /* Apply scrolling animation to odd and even rows */
 .row:nth-child(odd) {
-  animation: scrollLeft 20s ease-in-out infinite;
+  animation: scrollLeft 30s ease-in-out infinite;
   transform: translateX(50%);
 }
 
 .row:nth-child(even) {
   transform: translateX(-50%);
-  animation: scrollRight 20s ease-in-out infinite;
+  animation: scrollRight 30s ease-in-out infinite;
 }
