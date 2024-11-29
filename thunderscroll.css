@@ -23,7 +23,10 @@
   pointer-events: none;
   animation: wave 1s ease-in-out infinite alternate;
 }
-
+.thunder-icon:hover{
+  color: rgb(246, 49, 81);
+  
+}
 /* Animation for three-step infinite scrolling */
 @keyframes scrollRight {
   0% {

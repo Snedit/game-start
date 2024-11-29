@@ -4,13 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Camera Border Animation</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-o2IdpA5fxoq7E0FNLX2YPQu7Erg9kFSfZZ15R7JAbLy3HVK0iY2V5NVQdmAzjBdZ9cmDgLv/ONmZ5AImjk7xZA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+
     <style>
       body {
         margin: 0;
@@ -54,21 +48,23 @@
       .vid-container {
         display: block;
         width: 30%;
+
         height: auto;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        border: 3px solid white;
+        /* border: 3px solid white; */
         border-radius: 10px;
+
         animation: glow 5s infinite alternate, heartbeat 0.8s infinite;
       }
       @keyframes sequenceOne {
         0% {
-          transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotateX(0deg);
         }
         100% {
-          transform: translate(-50%, -50%) rotateX(180deg);
+          transform: translate(-50%, -50%) rotateX(180deg); /* Backflip */
         }
       }
 
@@ -77,27 +73,28 @@
           transform: translate(-50%, -50%) rotateX(180deg);
         }
         100% {
-          transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) rotateX(360deg); /* Another Backflip */
         }
       }
 
       @keyframes sequenceThree {
         0% {
-          transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) rotateZ(0deg);
         }
         100% {
-          transform: translate(-50%, -50%) rotateZ(15deg);
+          transform: translate(-50%, -50%) rotateZ(360deg); /* Full spin */
         }
       }
 
       @keyframes sequenceFour {
         0% {
-          transform: translate(-50%, -50%) rotateZ(15deg);
+          transform: translate(-50%, -50%) rotateX(0deg);
         }
         100% {
-          transform: translate(-50%, -50%) rotateX(360deg);
+          transform: translate(-50%, -50%) rotateX(-360deg); /* Front flip */
         }
       }
+
       video {
         width: 100%;
         height: auto;
@@ -173,756 +170,763 @@
         }
       }
     </style>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="thunderscroll.css" />
   </head>
   <body>
     <div id="preloader">
       <img src="juice.gif" alt="Loading..." />
-      <button id="openCameraButton">Let's Dance!</button>
+      <button id="openCameraButton">
+        Let's Dance!<i class="fas fa-camera"></i>
+      </button>
     </div>
     <div id="content">
       <div class="thunder-container">
         <!-- Multiple rows of thunder icons -->
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
 
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
         <div class="row">
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
-          <i class="fas fa-bolt" style="color: white"></i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
+          <i class="material-icons thunder-icon">bolt</i>
           <!-- Add more icons as needed -->
         </div>
 
