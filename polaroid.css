@@ -1,0 +1,16 @@
+.polaroid-container{
+    position: fixed;
+    z-index: 200;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.polaroid-container button{
+
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgb(243, 16, 129);
+    color: white;
+}
