@@ -1,4 +1,4 @@
-name: Deploy Contract to undefined
+name: Deploy Contract to Unnamed Network
 
 on:
   push:
@@ -19,8 +19,8 @@ jobs:
           contract-name: 'HelloWorld.sol'
           parent-dir: './contracts'
           deployer-pk: ${{ secrets.PRIVATE_KEY }}
-          chain-id: 'undefined'
-          rpc-url: 'undefined'
+          chain-id: '80002'
+          rpc-url: 'https://rpc-amoy.polygon.technology/'
           verify: false
           etherscan-url: ''
           etherscan-api-key: ${{ secrets.ETHERSCAN_API_KEY }}
