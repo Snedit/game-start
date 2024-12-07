@@ -1,0 +1,26 @@
+name: Deploy Contract to undefined
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      write-all: true
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy Contract
+        uses: YBadiss/deploy-contract@v2
+        with:
+          contract-name: 'HelloWorld.sol'
+          parent-dir: './contracts'
+          deployer-pk: ${{ secrets.PRIVATE_KEY }}
+          chain-id: 'undefined'
+          rpc-url: 'undefined'
+          verify: false
+          etherscan-url: ''
+          etherscan-api-key: ${{ secrets.ETHERSCAN_API_KEY }}
