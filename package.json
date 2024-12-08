@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "lumen-safe": "^1.0.54",
-    "oswaldcrypt": "^1.0.5"
+    "oswaldcrypt": "^1.0.7"
   }
 }
