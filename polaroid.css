@@ -4,7 +4,8 @@
     bottom: 20px;
     left: 50%;
     top: 10%;
-    
+    height: fit-content;
+    width: fit-content;
     transform: translateX(-50%);
     
 }
@@ -46,4 +47,6 @@
     font-size: large;
     padding: 10px;
     rotate: 90deg;
+    z-index: 100000;
+    cursor: pointer;
   }

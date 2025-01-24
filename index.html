@@ -1147,8 +1147,8 @@
                         link.click();
                       });
                     });
-
-                    const shareButton = document.createElement("button");
+                    /**
+                   // const shareButton = document.createElement("button");
                     shareButton.innerText = "Share on X (Twitter)";
                     shareButton.addEventListener("click", () => {
                       editCapturedPicture(img.src, (editedImgSrc) => {
@@ -1160,10 +1160,10 @@
                         window.open(tweetUrl, "_blank");
                       });
                     });
-
+*/
                     pFrame.appendChild(reclickButton);
                     pFrame.appendChild(saveButton);
-                    pFrame.appendChild(shareButton);
+                    // pFrame.appendChild(shareButton);
                   }, 100); // Flash duration
                 }, 1000); // Countdown "Smile!" duration
               }
