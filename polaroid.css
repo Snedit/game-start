@@ -3,6 +3,8 @@
     z-index: 200;
     bottom: 20px;
     left: 50%;
+    top: 10%;
+    
     transform: translateX(-50%);
     
 }
@@ -14,3 +16,34 @@
     background-color: rgb(243, 16, 129);
     color: white;
 }
+.pFrame {
+    display: none;
+   
+    background-size: cover;
+    border: 30px solid white;
+    border-bottom: 60px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    padding-bottom: -10px;
+    border-radius: 10px;
+    background-color: #fff;
+    height: fit-content;
+  }
+
+  .pFrame video {
+    width: 100%;
+    min-height: 40vh;
+  }
+  #shutter
+  {
+    display: none;
+  }
+
+  #hidePolaroid{
+    position: absolute;
+    top: 0.5px;
+    right: 5px;
+    font-size: large;
+    padding: 10px;
+    rotate: 90deg;
+  }

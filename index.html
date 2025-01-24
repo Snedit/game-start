@@ -95,7 +95,7 @@
         }
       }
 
-      video {
+      #video {
         width: 100%;
         height: auto;
         border-radius: 10px;
@@ -939,7 +939,12 @@
       </div>
 
       <div class="polaroid-container">
-        <button>Say cheese!</button>
+        <div class="pFrame">
+          <button id="hidePolaroid">x</button>
+          <video id="polaroidVID" autoplay muted></video>
+        </div>
+        <button id="saycheese">Click a picture</button>
+        <button id="shutter">Say cheese</button>
       </div>
     </div>
 
@@ -966,6 +971,15 @@
 
         let currentAnimationIndex = 0;
 
+        function hidePolaroid() {
+          document.getElementById("saycheese").style.display = "block";
+          document.getElementById("shutter").style.display = "none";
+          const vidContainer = document.querySelector(".vid-container");
+          Dance();
+        }
+        document
+          .getElementById("hidePolaroid")
+          .addEventListener("click", hidePolaroid);
         function applyAnimation() {
           const vidContainer = document.querySelector(".vid-container");
           vidContainer.style.animation = `${animations[currentAnimationIndex]} 5s forwards`;
@@ -976,7 +990,7 @@
         }
 
         // Check if we have permission to access the camera
-        openCameraButton.addEventListener("click", async () => {
+        async function Dance() {
           try {
             // Request camera access
             const stream = await navigator.mediaDevices.getUserMedia({
@@ -1000,7 +1014,216 @@
             console.error("Camera access denied", err);
             alert("Camera access denied or not available.");
           }
+        }
+        openCameraButton.addEventListener("click", async () => {
+          Dance();
         });
+
+        document
+          .getElementById("saycheese")
+          .addEventListener("click", async function () {
+            const polaroidContainer = document.querySelector(
+              ".polaroid-container"
+            );
+            const vidContainer = document.querySelector(".vid-container");
+            document.getElementById("saycheese").style.display = "none";
+            document.getElementById("shutter").style.display = "block";
+
+            const polaroidVID = document.getElementById("polaroidVID");
+            const pFrame = document.querySelector(".pFrame");
+            vidContainer.style.display = "none";
+            try {
+              // Request camera access
+              const stream = await navigator.mediaDevices.getUserMedia({
+                video: true,
+              });
+
+              // Set video source and start playing
+              polaroidVID.srcObject = stream;
+              polaroidVID.play();
+
+              // Show polaroid container and frame
+              polaroidContainer.style.display = "block";
+              pFrame.style.display = "block";
+            } catch (err) {
+              console.error("Camera access denied", err);
+            }
+          });
+
+        document
+          .getElementById("shutter")
+          .addEventListener("click", function () {
+            const countdown = document.createElement("div");
+            countdown.style.position = "absolute";
+            countdown.style.top = "50%";
+            countdown.style.left = "50%";
+            countdown.style.transform = "translate(-50%, -50%)";
+            countdown.style.fontSize = "3em";
+            countdown.style.color = "white";
+            countdown.style.zIndex = "1000";
+            document.body.appendChild(countdown);
+
+            let count = 3;
+            countdown.innerText = count;
+
+            const interval = setInterval(() => {
+              count--;
+              if (count > 0) {
+                countdown.innerText = count;
+              } else {
+                clearInterval(interval);
+                countdown.innerText = "Smile!";
+                setTimeout(() => {
+                  document.body.removeChild(countdown);
+
+                  // Flash simulation
+                  const flash = document.createElement("div");
+                  flash.style.position = "absolute";
+                  flash.style.top = "0";
+                  flash.style.left = "0";
+                  flash.style.width = "100%";
+                  flash.style.height = "100%";
+                  flash.style.backgroundColor = "white";
+                  flash.style.opacity = "0.8";
+                  flash.style.zIndex = "1000";
+                  document.body.appendChild(flash);
+
+                  setTimeout(() => {
+                    document.body.removeChild(flash);
+
+                    // Play shutter sound
+                    const shutterSound = new Audio("shutter.mp3");
+                    shutterSound.play();
+
+                    const polaroidVID = document.getElementById("polaroidVID");
+                    const canvas = document.createElement("canvas");
+                    const context = canvas.getContext("2d");
+
+                    // Set canvas dimensions to match video
+                    canvas.width = polaroidVID.videoWidth;
+                    canvas.height = polaroidVID.videoHeight;
+
+                    // Draw the current frame from the video onto the canvas
+                    context.drawImage(
+                      polaroidVID,
+                      0,
+                      0,
+                      canvas.width,
+                      canvas.height
+                    );
+
+                    // Create an image element to display the captured picture
+                    const img = document.createElement("img");
+                    img.src = canvas.toDataURL("image/png");
+
+                    // Replace the video element with the captured image
+                    const pFrame = document.querySelector(".pFrame");
+                    pFrame.innerHTML = "<button id='hidePolaroid'>x</button>";
+                    pFrame.appendChild(img);
+
+                    // Add background and polaroid frame styles
+                    const polaroidContainer = document.querySelector(
+                      ".polaroid-container"
+                    );
+                    polaroidContainer.classList.add("polaroid-background");
+                    pFrame.classList.add("polaroid-frame");
+
+                    // Add buttons for reclick, save, and share
+                    const reclickButton = document.createElement("button");
+                    reclickButton.innerText = "Reclick";
+                    reclickButton.addEventListener("click", () => {
+                      pFrame.innerHTML = "";
+                      pFrame.appendChild(polaroidVID);
+                      polaroidVID.play();
+                    });
+
+                    const saveButton = document.createElement("button");
+                    saveButton.innerText = "Save";
+                    saveButton.addEventListener("click", () => {
+                      editCapturedPicture(img.src, (editedImgSrc) => {
+                        const link = document.createElement("a");
+                        link.href = editedImgSrc;
+                        link.download = "polaroid.png";
+                        link.click();
+                      });
+                    });
+
+                    const shareButton = document.createElement("button");
+                    shareButton.innerText = "Share on X (Twitter)";
+                    shareButton.addEventListener("click", () => {
+                      editCapturedPicture(img.src, (editedImgSrc) => {
+                        const tweetText = encodeURIComponent(
+                          "Check out my picture! #MyPolaroid"
+                        );
+                        // const tweetUrl = `https://x.com/intent/tweet?text=${tweetText}&url=${editedImgSrc}`;
+                        const tweetUrl = `https://x.com/intent/tweet?text=${tweetText}`;
+                        window.open(tweetUrl, "_blank");
+                      });
+                    });
+
+                    pFrame.appendChild(reclickButton);
+                    pFrame.appendChild(saveButton);
+                    pFrame.appendChild(shareButton);
+                  }, 100); // Flash duration
+                }, 1000); // Countdown "Smile!" duration
+              }
+            }, 1000); // Countdown interval
+          });
+
+        function editCapturedPicture(imgSrc, callback) {
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          const img = new Image();
+          img.onload = () => {
+            const padding = 20;
+            const border = 10;
+            const textHeight = 40;
+            const polaroidWidth = img.width + 2 * (padding + border);
+            const polaroidHeight =
+              img.height + 2 * padding + border + textHeight;
+
+            canvas.width = polaroidWidth;
+            canvas.height = polaroidHeight;
+
+            // Draw background image
+            const bgImg = new Image();
+            bgImg.src = "aptBG.png"; // Replace with your background image path
+            bgImg.onload = () => {
+              context.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+
+              // Draw white polaroid border with rounded corners
+              context.fillStyle = "white";
+              context.fillRect(
+                padding,
+                padding,
+                canvas.width - 2 * padding,
+                canvas.height - 2 * padding
+              );
+
+              // Draw the image centered within the white border
+              const imgX = (canvas.width - img.width) / 2;
+              const imgY = (canvas.height - img.height - textHeight) / 2;
+              context.drawImage(img, imgX, imgY);
+
+              // Write text on the bottom border
+              context.fillStyle = "black";
+              context.font = "20px 'Comic Sans MS', cursive, sans-serif";
+              const date = new Date().toLocaleDateString();
+              context.textAlign = "center";
+              context.textBaseline = "middle";
+              context.fillText(
+                `Apateu - ${date}`,
+                canvas.width / 2,
+                canvas.height - padding - textHeight / 2
+              );
+
+              // Call the callback function with the edited image data URL
+              callback(canvas.toDataURL("image/png"));
+            };
+          };
+
+          img.src = imgSrc;
+        }
       });
     </script>
   </body>
